@@ -25,11 +25,8 @@
         <td>
             @if (request()->has('has_deleted'))
                 <a href="{{ route('products.restore', $product->id) }}" class="btn btn-success">Restore</a>
-                <form action="/products/{{$product->id}}/forcedelete" method="post">
-                    @csrf
-                    @method('delete')
-                    <button type="submit">Force Delete</button>
-                </form>
+                {{-- only need to use link to force delete --}}
+                <a href="{{ route('products.forceDelete', $product->id) }}" class="btn btn-success">Delete Permanently</a>
             @else
                 <a href="products/{{$product->id}}/edit">Edit</a>
                 <form action="/products/{{$product->id}}" method="post">

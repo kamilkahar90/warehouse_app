@@ -111,9 +111,9 @@ class ProductController extends Controller
         return redirect('/products');
     }
     
-    public function forceDelete(Product $product)
+    public function forceDelete($id) //parameter need to change to variable id
     {
-        $product = Product::withTrashed()->find($product->id);
+        $product = Product::onlyTrashed()->find($id); //parameter will get value from this id
         $product->forceDelete();
         return redirect('/products');
     }

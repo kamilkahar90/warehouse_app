@@ -25,7 +25,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('products', App\Http\Controllers\ProductController::class);
 
 Route::get('products/restore/{id}', [App\Http\Controllers\ProductController::class, 'restore'])->name('products.restore');
-Route::delete('products/{id}/forcedelete', [App\Http\Controllers\ProductController::class, 'forceDelete'])->name('products.forceDelete');
+
+//using a get method to call the route
+Route::get('products/forcedelete/{id}', [App\Http\Controllers\ProductController::class, 'forceDelete'])->name('products.forceDelete');
 
 Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth']], function() {
     Route::get('dashboard',[App\Http\Controllers\AdminController::class,'dashboard'])->name('admin.dashboard');
