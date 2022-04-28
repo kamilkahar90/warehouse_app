@@ -23,7 +23,7 @@ $ php artisan key:generate
 $ composer install
 $ npm install
 $ npm run dev
-$ npm run dev - (IMPORTANT: run second time to resolve the errorerrrrrrrrrrrrrrrrrrrrrrrrrrrr1====cgtf ........x )
+$ npm run dev - (IMPORTANT: run second time to resolve the error )
 ```
 
 ### 4. Generate database
